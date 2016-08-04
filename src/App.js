@@ -6,7 +6,7 @@ export default class App extends Component {
         return (<FloxidComponent/>);
 
         let containerClasses = "floxid-container floxid-column" ;
-        let panelClasses = "floxid-panel-row" ;
+        let panelClasses = "floxid-panel-row-open" ;
         let panelClassesClosed = "floxid-panel-row-closed" ;
         let panelHeaderClasses = "tp-flex-header-item floxid-panel-row-header" ;
         let panelContentClasses = "tp-flex-item floxid-panel-row-content" ;

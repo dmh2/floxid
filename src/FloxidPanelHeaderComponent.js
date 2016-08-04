@@ -26,16 +26,18 @@ export default class FloxidPanelHeaderComponent extends Component {
      * @private
      */
     _handleHeaderClick(event){
-        // TODO: move click handling to a centralized event/stream-handling script to manage panel opening/closing.
+        // TODO: move click handling to a centralized event/stream-handling script to manage panel opening/closing,
+        // e.g. to enable single vs multiple open panels at once.
         let headerElement = event && event.nativeEvent ? event.nativeEvent.target : null ;
         let panelElement = headerElement && headerElement.parentElement ? headerElement.parentElement : null ;
-        if(panelElement && panelElement.className && panelElement.className.indexOf('floxid-panel-row') >= 0)
-        {
-            if(panelElement.className.indexOf('floxid-panel-row-closed') >= 0){
-                panelElement.className = panelElement.className.replace('floxid-panel-row-closed','floxid-panel-row') ;
+
+        // Check that the element is the correct outer element by the base of its className.
+        if(panelElement && panelElement.className && panelElement.className.indexOf('floxid-panel-row-') >= 0) {
+            if(panelElement.className.indexOf('floxid-panel-row-closed') >= 0) {
+                panelElement.className = panelElement.className.replace('floxid-panel-row-closed', 'floxid-panel-row-open');
             }
-            else{
-                panelElement.className = panelElement.className.replace('floxid-panel-row','floxid-panel-row-closed') ;
+            else {
+                panelElement.className = panelElement.className.replace('floxid-panel-row-open', 'floxid-panel-row-closed');
             }
         }
     }

@@ -22,7 +22,7 @@ export default class FloxidPanelView extends Component {
 
     render() {
         return (
-            <div className="floxid-panel-row floxid-column" ref="floxid-panel">
+            <div className="floxid-panel-row-open floxid-column" ref="floxid-panel">
                 <FloxidPanelHeaderComponent text={this.props.header}/>
                 <FloxidPanelContentComponent content={this.props.content}/>
             </div>
